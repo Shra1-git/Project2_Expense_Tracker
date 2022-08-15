@@ -1,0 +1,75 @@
+<Html>
+    <head>
+        <title>Expense Tracker</title>
+        <link rel="stylesheet" href="jsex2.css">
+
+        <script>
+           function buttn(){
+            //document.getElementById("tableid").innerHTML = "";
+
+               name= document.getElementById("name").value;
+               date= document.getElementById("date").value;
+               amount= document.getElementById("amount").value;
+               tbody= document.getElementById("tableid");
+               if(name == "" || date == "" || amount == ""){
+                alert("Enter all the details");
+                return null;
+               }
+               row= document.createElement("tr");
+               ctname=document.createElement("td");
+               ctdate=document.createElement("td");
+               ctamount=document.createElement("td");
+               ctdltble=document.createElement("td");
+               ctremove=document.createElement("button");
+               
+               
+               
+               ctname.innerHTML= name;
+               ctdate.innerHTML= date;
+               ctamount.innerHTML=amount;
+               ctremove.innerHTML = "X";
+               ctdltble.appendChild(ctremove);
+               
+              
+               tbody.appendChild(row);
+               row.appendChild(ctname);
+               row.appendChild(ctdate);
+               row.appendChild(ctamount);
+               row.appendChild(ctdltble);
+               
+
+               
+               
+               
+               
+               ctremove.onclick = function(){
+                
+                this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+
+           }
+        }
+        </script>
+    </head>
+    <body>
+        <form>
+        <h1 style="text-align:Center"> Expense Tracker <br> Add a New Item:</h1>
+       <div style="text-align:Center">
+            <div> Name: <input type="text" name="expensebox" id="name" placeholder="Where was the expense made?" size="45"></div>
+            <div> Date: <input type="date" name="expensebox" id="date" size="30"> Amount Date: <input type="text" name="expensebox" id="amount"  size="30"></div>
+            <div> <button type="button" onclick="buttn(); reset()" >Add Expense</button></div><br><br><br>
+            
+        </div> 
+    </form>
+    <div style="margin: 60px 150px 60px 150px " >
+        <table id="ttt">
+                 <tr>
+                     <th>Name</th><th>Date</th><th>Amount</th><th>What you want to do</th>
+                </tr>
+                <tbody id="tableid"></tbody>
+                
+        </table>
+    </div>
+        
+
+    </body>
+</Html>

@@ -1,0 +1,22 @@
+th,  td {
+ border: 1px solid black;
+ border-collapse: collapse;
+}
+th,  td{
+    width: 200px;
+    text-align: center;
+}
+
+tr{ 
+    
+    height: 40px;
+    
+ }
+
+ tbody{
+    padding:0;
+ }
+ #ttt{
+    border: 1px solid black;
+ border-collapse: collapse;
+ }
